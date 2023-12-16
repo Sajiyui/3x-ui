@@ -78,13 +78,13 @@ install_base() {
 # This function will be called when user installed x-ui out of security
 config_after_install() {
     echo -e "${yellow}Install/update finished! For security it's recommended to modify panel settings ${plain}"
-    read -p "Do you want to continue with the modification [y/n]? ": config_confirm
+    read -p "Do you want to continue with the modification [y/n]? ": y
     if [[ "${config_confirm}" == "y" || "${config_confirm}" == "Y" ]]; then
-        read -p "Please set up your username:" config_account
+        read -p "Please set up your username:" admin
         echo -e "${yellow}Your username will be:${config_account}${plain}"
-        read -p "Please set up your password:" config_password
+        read -p "Please set up your password:" admin
         echo -e "${yellow}Your password will be:${config_password}${plain}"
-        read -p "Please set up the panel port:" config_port
+        read -p "Please set up the panel port:" 8585
         echo -e "${yellow}Your panel port is:${config_port}${plain}"
         echo -e "${yellow}Initializing, please wait...${plain}"
         /usr/local/x-ui/x-ui setting -username ${config_account} -password ${config_password}
