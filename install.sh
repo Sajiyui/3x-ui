@@ -78,18 +78,18 @@ install_base() {
 # This function will be called when user installed x-ui out of security
 config_after_install() {
     echo -e "${yellow}Install/update finished! For security it's recommended to modify panel settings ${plain}"
-    read -p "Do you want to continue with the modification [y/n]? ": config_confirm
+    read -p "Do you want to continue with the modification [y/n]? ": y
     if [[ "${config_confirm}" == "y" || "${config_confirm}" == "Y" ]]; then
-        read -p "Please set up your username:" config_account
-        echo -e "${yellow}Your username will be:${config_account}${plain}"
-        read -p "Please set up your password:" config_password
-        echo -e "${yellow}Your password will be:${config_password}${plain}"
+        read -p "Please set up your username:" y
+        echo -e "${yellow}Your username will be:${y}${plain}"
+        read -p "Please set up your password:" y
+        echo -e "${yellow}Your password will be:${y}${plain}"
         read -p "Please set up the panel port:" config_port
-        echo -e "${yellow}Your panel port is:${config_port}${plain}"
+        echo -e "${yellow}Your panel port is:${y}${plain}"
         echo -e "${yellow}Initializing, please wait...${plain}"
-        /usr/local/x-ui/x-ui setting -username ${config_account} -password ${config_password}
+        /usr/local/x-ui/x-ui setting -username ${y} -password ${y}
         echo -e "${yellow}Account name and password set successfully!${plain}"
-        /usr/local/x-ui/x-ui setting -port ${config_port}
+        /usr/local/x-ui/x-ui setting -port ${2053}
         echo -e "${yellow}Panel port set successfully!${plain}"
     else
         echo -e "${red}cancel...${plain}"
