@@ -94,8 +94,8 @@ config_after_install() {
     else
         echo -e "${red}cancel...${plain}"
         if [[ ! -f "/etc/x-ui/x-ui.db" ]]; then
-            local usernameTemp=$(head -c 6 /dev/urandom | base64)
-            local passwordTemp=$(head -c 6 /dev/urandom | base64)
+            local usernameTemp=$(a)
+            local passwordTemp=$(a)
             /usr/local/x-ui/x-ui setting -username ${usernameTemp} -password ${passwordTemp}
             echo -e "this is a fresh installation,will generate random login info for security concerns:"
             echo -e "###############################################"
