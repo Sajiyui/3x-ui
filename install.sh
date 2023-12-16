@@ -84,7 +84,7 @@ config_after_install() {
         echo -e "${yellow}Your username will be:${y}${plain}"
         read -p "Please set up your password:" y
         echo -e "${yellow}Your password will be:${y}${plain}"
-        read -p "Please set up the panel port:" config_port
+        read -p "Please set up the panel port:" y
         echo -e "${yellow}Your panel port is:${y}${plain}"
         echo -e "${yellow}Initializing, please wait...${plain}"
         /usr/local/x-ui/x-ui setting -username ${y} -password ${y}
